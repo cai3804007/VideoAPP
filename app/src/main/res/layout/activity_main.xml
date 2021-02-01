@@ -13,6 +13,7 @@
         android:paddingRight="44dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="90dp"
+
         >
         <Button
             android:layout_width="100dp"
@@ -23,7 +24,8 @@
             android:textSize="20sp"
             android:gravity="center"
             android:background="@drawable/shape_login_btn"
-            ></Button>
+            android:id="@+id/loginbtn"
+            />
 
         <Button
             android:layout_width="100dp"
@@ -34,7 +36,9 @@
             android:textSize="20sp"
             android:gravity="center"
             android:background="@drawable/shape_register_btn"
-            ></Button>
+            android:onClick="regsterClick"
+            android:id="@+id/regster"
+            />
     </RelativeLayout>
 
 
