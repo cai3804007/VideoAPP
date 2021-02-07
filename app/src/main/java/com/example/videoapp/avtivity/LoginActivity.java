@@ -48,7 +48,8 @@ public class LoginActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
+        userText.setText("root");
+        pwdText.setText("123456");
     }
 
     public void loginClick(View view){

@@ -36,9 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void showToastSync(String msg){
-        Looper.prepare();
         Toast.makeText(mContext,msg,Toast.LENGTH_SHORT).show();
-        Looper.loop();
     }
 
     public void  navigateTo(Class cls){
@@ -51,6 +49,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         SharedPreferences.Editor edit = sp.edit();
         edit.putString(key,value);
         edit.commit();
+    }
+
+    protected String getStringFromSp(String key){
+        SharedPreferences sp = getSharedPreferences("sean_data",MODE_PRIVATE);
+        return sp.getString(key,"");
     }
 
 }

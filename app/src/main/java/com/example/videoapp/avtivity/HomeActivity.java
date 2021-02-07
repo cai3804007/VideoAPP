@@ -9,20 +9,33 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
+import com.blankj.utilcode.util.GsonUtils;
+import com.blankj.utilcode.util.JsonUtils;
 import com.example.videoapp.R;
 import com.example.videoapp.adapter.MyPagerAdapter;
+import com.example.videoapp.api.MineRequest;
+import com.example.videoapp.api.SeanCallBack;
 import com.example.videoapp.fragenmt.CollectionFragment;
 import com.example.videoapp.fragenmt.HomeFragment;
 import com.example.videoapp.fragenmt.MyFragment;
+import com.example.videoapp.fragenmt.NewsFragment;
+import com.example.videoapp.models.HomeTitleModel;
 import com.example.videoapp.models.TabEntity;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends BaseActivity {
-    private String[] mTitles = {"首页", "收藏", "我的"};
+    private String[] mTitles = {"首页", "资讯", "我的"};
     private int[] mIconUnselectIds = {
             R.mipmap.home_unselect, R.mipmap.collect_unselect,
             R.mipmap.my_unselect};
@@ -48,7 +61,7 @@ public class HomeActivity extends BaseActivity {
         mTabLayout = findViewById(R.id.tablayout);
         //添加页面
         mFragments.add(HomeFragment.newInstance());
-        mFragments.add(CollectionFragment.newInstance());
+        mFragments.add(NewsFragment.newInstance());
         mFragments.add(MyFragment.newInstance());
         //添加标题
         for (int i = 0; i < mTitles.length; i++) {

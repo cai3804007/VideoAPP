@@ -8,6 +8,7 @@
     tools:context=".avtivity.HomeActivity"
     android:background="#ffffff"
     android:orientation="vertical"
+
     >
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"

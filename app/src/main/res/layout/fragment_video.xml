@@ -1,20 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.scwang.smart.refresh.layout.SmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragenmt.VideoFragment"
     android:background="@color/white"
+    android:orientation="vertical"
+    android:id="@+id/reshView"
     >
+   <com.scwang.smart.refresh.header.ClassicsHeader
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
+<!--   <ImageView-->
+<!--       android:layout_width="match_parent"-->
+<!--       android:layout_height="300dp"-->
+<!--       android:id="@+id/myImage"-->
+<!--       android:background="@color/Coral"-->
+<!--       />-->
+   <androidx.recyclerview.widget.RecyclerView
+       android:id="@+id/recyclerview"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:id="@+id/hoem_video_text"
-        />
+       />
+   <com.scwang.smart.refresh.footer.ClassicsFooter
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"/>
 
-</FrameLayout>
+</com.scwang.smart.refresh.layout.SmartRefreshLayout>

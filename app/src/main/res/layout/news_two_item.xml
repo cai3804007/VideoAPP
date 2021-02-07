@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    >
+    <TextView
+        android:layout_height="21dp"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="CS+吃鸡+守望先锋，真正的大杂烩！"
+        android:textColor="@color/black"
+        android:id="@+id/title"
+        />
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="190dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="8dp"
+    android:scaleType="fitXY"
+    android:src="@mipmap/news_bg"
+    android:id="@+id/oneImage"
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/header"
+            android:id="@+id/userimage"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:textColor="@color/grey61"
+            android:layout_marginLeft="8dp"
+            android:text="游戏早知道 .1评论 .1小时前"
+            android:id="@+id/timetext"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
