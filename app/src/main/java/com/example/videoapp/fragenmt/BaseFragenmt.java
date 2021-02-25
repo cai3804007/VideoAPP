@@ -16,21 +16,33 @@ import androidx.fragment.app.Fragment;
 
 import com.dueeeke.videoplayer.player.VideoViewManager;
 
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
+import static android.content.Context.MODE_PRIVATE;
+
 public abstract class  BaseFragenmt extends Fragment {
 
     protected abstract int initLayout();
     protected abstract void initView();
     protected abstract void initData();
     protected View rootView;
+    private Unbinder unbinder;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (rootView == null){
             rootView = inflater.inflate(initLayout(),container,false);
-
         }
+        unbinder = ButterKnife.bind(this,rootView);
         return rootView;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
     }
 
     @Override
@@ -64,6 +76,29 @@ public abstract class  BaseFragenmt extends Fragment {
     public void showToastSync(String msg){
         Toast.makeText(getActivity(),msg,Toast.LENGTH_SHORT).show();
     }
+
+    protected void insertVal(String key, String val) {
+        SharedPreferences sp = getActivity().getSharedPreferences("sean", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString(key, val);
+       boolean sucess = editor.commit();
+       if (sucess){
+           showToast("写入成功");
+       }
+    }
+
+    protected String findByKey(String key) {
+        SharedPreferences sp = getActivity().getSharedPreferences("sean", MODE_PRIVATE);
+        return sp.getString(key, "");
+    }
+
+    protected void removeByKey(String key) {
+        SharedPreferences sp = getActivity().getSharedPreferences("sean", MODE_PRIVATE);
+        SharedPreferences.Editor edit = sp.edit();
+        edit.remove(key);
+        edit.commit();
+    }
+
 
     /**
      * 子类可通过此方法直接拿到VideoViewManager

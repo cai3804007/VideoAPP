@@ -8,7 +8,9 @@ import android.util.Log;
 import androidx.annotation.MainThread;
 
 import com.blankj.utilcode.util.ThreadUtils;
+import com.bumptech.glide.RequestBuilder;
 import com.example.videoapp.MainActivity;
+import com.example.videoapp.MyApplication;
 import com.example.videoapp.avtivity.LoginActivity;
 import com.example.videoapp.util.AppConfig;
 import com.example.videoapp.util.StringUtils;
@@ -51,10 +53,19 @@ public class SeanRequestManager {
         String jsonStr = jsonObject.toString();
         RequestBody requestBody = RequestBody.create(MediaType
                                              .parse("application/json;charset=utf-8"),jsonStr);
+        SharedPreferences sp = context.getSharedPreferences("sean_data", MODE_PRIVATE);
+        String token = sp.getString("token", "");
         //第三步创建Rquest
-        Request request = new Request.Builder().url(requestURL)
+
+        Request.Builder builder = new Request.Builder();
+        Request request = builder.url(requestURL)
                 .addHeader("contentType", "application/json;charset=UTF-8")
                 .post(requestBody).build();
+        if (token != null){
+            builder.addHeader("token", token);
+        }
+
+//        Request request = builder.;
         //第四步创建call回调对象
         final Call call = client.newCall(request);
         //第五步发起请求

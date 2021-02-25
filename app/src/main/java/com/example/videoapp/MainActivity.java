@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.videoapp.avtivity.BaseActivity;
+import com.example.videoapp.avtivity.HomeActivity;
 import com.example.videoapp.avtivity.LoginActivity;
 import com.example.videoapp.avtivity.RegisterActivity;
 
@@ -49,6 +50,12 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        String token = getStringFromSp("token");
+        if (token.length() > 0){
+            navigateTo(HomeActivity.class);
+            finish();
+        }
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

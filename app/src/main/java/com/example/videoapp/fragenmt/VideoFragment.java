@@ -119,27 +119,9 @@ public class VideoFragment extends BaseFragenmt implements OnItemChildClickListe
 
     @Override
     protected void initView() {
-        RecyclerView mRecyclerView = rootView.findViewById(R.id.recyclerview);
-        this.recyclerView = mRecyclerView;
-        reshView = rootView.findViewById(R.id.reshView);
 
-        mRecyclerView.addOnChildAttachStateChangeListener(new RecyclerView.OnChildAttachStateChangeListener() {
-            @Override
-            public void onChildViewAttachedToWindow(@NonNull View view) {
 
-            }
 
-            @Override
-            public void onChildViewDetachedFromWindow(@NonNull View view) {
-                FrameLayout playerContainer = view.findViewById(R.id.player_container);
-                View v = playerContainer.getChildAt(0);
-                if (v != null && v == mVideoView && !mVideoView.isFullScreen()) {
-                    releaseVideoView();
-                }
-            }
-        });
-
-        initVideoView();
 
     }
 
@@ -241,6 +223,27 @@ public class VideoFragment extends BaseFragenmt implements OnItemChildClickListe
     
     @Override
     protected void initData() {
+        RecyclerView mRecyclerView = rootView.findViewById(R.id.recyclerview);
+        this.recyclerView = mRecyclerView;
+        reshView = rootView.findViewById(R.id.reshView);
+
+        mRecyclerView.addOnChildAttachStateChangeListener(new RecyclerView.OnChildAttachStateChangeListener() {
+            @Override
+            public void onChildViewAttachedToWindow(@NonNull View view) {
+
+            }
+
+            @Override
+            public void onChildViewDetachedFromWindow(@NonNull View view) {
+                FrameLayout playerContainer = view.findViewById(R.id.player_container);
+                View v = playerContainer.getChildAt(0);
+                if (v != null && v == mVideoView && !mVideoView.isFullScreen()) {
+                    releaseVideoView();
+                }
+            }
+        });
+
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mLinearLayoutManager = linearLayoutManager;
@@ -270,7 +273,7 @@ public class VideoFragment extends BaseFragenmt implements OnItemChildClickListe
 
             }
         });
-
+        initVideoView();
         getVideoList();
     }
 
@@ -337,7 +340,7 @@ public class VideoFragment extends BaseFragenmt implements OnItemChildClickListe
         if (mVideoView.isFullScreen()) {
             mVideoView.stopFullScreen();
         }
-        if(getActivity().getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
+        if (getActivity().getRequestedOrientation() != ActivityInfo.SCREEN_ORIENTATION_PORTRAIT) {
             getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
         mCurPos = -1;

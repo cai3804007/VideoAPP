@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: skin.support:skin-support-constraint-layout:4.0.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2e4e18ffa7f089281ef5f097ab63b3c7/jetified-skin-support-constraint-layout-4.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2e4e18ffa7f089281ef5f097ab63b3c7/jetified-skin-support-constraint-layout-4.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2e4e18ffa7f089281ef5f097ab63b3c7/jetified-skin-support-constraint-layout-4.0.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/skin.support/skin-support-constraint-layout/4.0.4/6247a8cb3236d4cd7d87a79d43cf54f4dbef7e2c/skin-support-constraint-layout-4.0.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/skin.support/skin-support-constraint-layout/4.0.4/f4126e4f6d91bd2161595704383e689f98b82811/skin-support-constraint-layout-4.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

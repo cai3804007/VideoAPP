@@ -4,6 +4,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3ee6b18af26af5bc7590121714d8e70d/jetified-refresh-header-classics-2.0.3/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3ee6b18af26af5bc7590121714d8e70d/jetified-refresh-header-classics-2.0.3/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3ee6b18af26af5bc7590121714d8e70d/jetified-refresh-header-classics-2.0.3/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/929e991674fa6dfcebaa0df17376c9cd/jetified-refresh-header-classics-2.0.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/929e991674fa6dfcebaa0df17376c9cd/jetified-refresh-header-classics-2.0.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/929e991674fa6dfcebaa0df17376c9cd/jetified-refresh-header-classics-2.0.3/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scwang.smart/refresh-header-classics/2.0.3/e0eaaf557a2caf49f34eff3a82e8df8b3fd96b8b/refresh-header-classics-2.0.3-javadoc.jar!/" />

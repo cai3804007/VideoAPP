@@ -3,6 +3,7 @@ package com.example.videoapp.api;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.videoapp.MyApplication;
 import com.example.videoapp.util.StringUtils;
 
 import java.util.HashMap;
@@ -14,7 +15,7 @@ public class MineRequest {
         map.put("mobile",account);
         map.put("password",pwd);
 //                {"mobile":account,"pwd":pwd};
-        SeanRequestManager.config(ApiConfig.LOGIN,map).postRequest(null,callBack);
+        SeanRequestManager.config(ApiConfig.LOGIN,map).postRequest(MyApplication.getContext(),callBack);
     }
     public static void regster(String account,String pwd,SeanCallBack callBack){
         HashMap<String,Object> map =  new HashMap<>();
@@ -36,6 +37,20 @@ public class MineRequest {
 //                {"mobile":account,"pwd":pwd};
         SeanRequestManager.config(ApiConfig.VIDEO_LIST,map).getRequest(context,callBack);
     }
+
+
+    public static void getCollectionList(Context context, String token, SeanCallBack callBack){
+        HashMap<String,Object> map =  new HashMap<>();
+        if (StringUtils.isEmpty(token)){
+            return;
+        }
+        map.put("token",token);
+
+//                {"mobile":account,"pwd":pwd};
+        SeanRequestManager.config(ApiConfig.VIDEO_MYCOLLECT,map).getRequest(context,callBack);
+    }
+
+
 
     public static void getTitleList(Context context, String token, SeanCallBack callBack){
         HashMap<String,Object> map =  new HashMap<>();
@@ -59,6 +74,16 @@ public class MineRequest {
 
 //                {"mobile":account,"pwd":pwd};
         SeanRequestManager.config(ApiConfig.NEWS_LIST,map).getRequest(context,callBack);
+    }
+
+    public static void upDateCount(int vid, int type, boolean flag, SeanCallBack callBack){
+        HashMap<String,Object> map =  new HashMap<>();
+        map.put("vid", vid);
+        map.put("type", type);
+        map.put("flag", flag);
+
+//                {"mobile":account,"pwd":pwd};
+        SeanRequestManager.config(ApiConfig.VIDEO_UPDATE_COUNT,map).postRequest(MyApplication.getContext(),callBack);
     }
 
 }

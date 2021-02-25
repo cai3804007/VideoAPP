@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: skin.support:skin-support-design:4.0.4@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9d58bca8fc80dcc24797755c7ac6d264/jetified-skin-support-design-4.0.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9d58bca8fc80dcc24797755c7ac6d264/jetified-skin-support-design-4.0.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9d58bca8fc80dcc24797755c7ac6d264/jetified-skin-support-design-4.0.4/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/skin.support/skin-support-design/4.0.4/634be5b835a1e0488fc24e8bcc5d9bae322714f6/skin-support-design-4.0.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/skin.support/skin-support-design/4.0.4/6a50f4ab18f0f0b845721ad31ebe6afbbd4cfad0/skin-support-design-4.0.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
