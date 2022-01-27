@@ -7,3 +7,6 @@
 
 4.使用java命令运行Tomcat
   java -jar renren-fast.jar
+
+
+123
